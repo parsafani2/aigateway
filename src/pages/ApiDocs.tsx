@@ -5,7 +5,7 @@ import { useApp } from "@/contexts/AppContext";
 export function ApiDocs() {
   const { t, theme } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
   const [copied, setCopied] = useState<string | null>(null);
 
   function copy(text: string, id: string) {
@@ -121,14 +121,14 @@ echo $response["choices"][0]["message"]["content"];`,
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("apiDocsTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("apiDocsTitle")}</h1>
         <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("apiDocsSubtitle")}</p>
       </div>
 
       <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-xl p-6">
         <div className="flex items-center gap-2 mb-3">
           <Zap className="w-5 h-5 text-cyan-500" />
-          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("quickStart")}</h2>
+          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("quickStart")}</h2>
         </div>
         <p className={`text-sm mb-4 ${isDark ? "text-slate-400" : "text-slate-600"}`}>{t("quickStartDesc")}</p>
         <div className={`flex items-center gap-2 px-4 py-3 rounded-lg ${isDark ? "bg-slate-950/60 border-slate-800" : "bg-white/60 border-slate-200"} border font-mono text-sm`}>
@@ -142,7 +142,7 @@ echo $response["choices"][0]["message"]["content"];`,
 
       <div className={`${cardBg} rounded-xl overflow-hidden border backdrop-blur-xl`}>
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-          <h2 className={`font-semibold text-lg flex items-center gap-2 ${isDark ? "text-slate-100" : "text-slate-900"}`}><Terminal className="w-5 h-5 text-slate-500" />{t("endpoints")}</h2>
+          <h2 className={`font-semibold text-lg flex items-center gap-2 ${isDark ? "text-slate-100" : "text-slate-800"}`}><Terminal className="w-5 h-5 text-slate-500" />{t("endpoints")}</h2>
         </div>
         <div className={`divide-y ${isDark ? "divide-slate-800" : "divide-slate-200"}`}>
           {endpoints.map((ep) => (
@@ -157,11 +157,11 @@ echo $response["choices"][0]["message"]["content"];`,
 
       <div className={`${cardBg} rounded-xl overflow-hidden border backdrop-blur-xl`}>
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-          <h2 className={`font-semibold text-lg flex items-center gap-2 ${isDark ? "text-slate-100" : "text-slate-900"}`}><Code2 className="w-5 h-5 text-slate-500" />{t("codeExamples")}</h2>
+          <h2 className={`font-semibold text-lg flex items-center gap-2 ${isDark ? "text-slate-100" : "text-slate-800"}`}><Code2 className="w-5 h-5 text-slate-500" />{t("codeExamples")}</h2>
         </div>
         <div className={`flex items-center gap-1 px-4 pt-4 border-b ${isDark ? "border-slate-800" : "border-slate-200"} pb-px overflow-x-auto scrollbar-thin`}>
           {Object.keys(examples).map((tab) => (
-            <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors whitespace-nowrap ${activeTab === tab ? `bg-slate-100 dark:bg-slate-800 ${isDark ? "text-slate-100" : "text-slate-900"} border-b-2 border-cyan-500` : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"}`}>
+            <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors whitespace-nowrap ${activeTab === tab ? `bg-slate-100 dark:bg-slate-800 ${isDark ? "text-slate-100" : "text-slate-800"} border-b-2 border-cyan-500` : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"}`}>
               {tab === "openai" ? "OpenAI SDK" : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
@@ -208,7 +208,7 @@ echo $response["choices"][0]["message"]["content"];`,
       </div>
 
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
-        <h2 className={`font-semibold text-lg mb-4 ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("howFallbackWorks")}</h2>
+        <h2 className={`font-semibold text-lg mb-4 ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("howFallbackWorks")}</h2>
         <div className="space-y-3">
           {fallbackSteps.map((item) => (
             <div key={item.step} className="flex items-start gap-3">
@@ -227,7 +227,7 @@ echo $response["choices"][0]["message"]["content"];`,
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
           <div className="flex items-center gap-2">
             <HelpCircle className="w-5 h-5 text-slate-500" />
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("faq")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("faq")}</h2>
           </div>
           <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("faqDesc")}</p>
         </div>
@@ -256,7 +256,7 @@ echo $response["choices"][0]["message"]["content"];`,
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
           <div className="flex items-center gap-2">
             <AlertTriangle className="w-5 h-5 text-amber-500" />
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("troubleshooting")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("troubleshooting")}</h2>
           </div>
           <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("troubleshootingDesc")}</p>
         </div>

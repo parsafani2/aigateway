@@ -19,7 +19,7 @@ import type { RiskScore } from "@/types";
 export function RiskMonitor() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
   const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
 
   const [scores, setScores] = useState<RiskScore[]>([]);
@@ -76,7 +76,7 @@ export function RiskMonitor() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("riskMonitorTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("riskMonitorTitle")}</h1>
         <p className={`text-sm mt-1 ${textSecondary}`}>{t("riskMonitorSubtitle")}</p>
       </div>
 
@@ -117,7 +117,7 @@ export function RiskMonitor() {
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
         <div className="flex items-center gap-2 mb-4">
           <Zap className="w-5 h-5 text-cyan-500" />
-          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("smartRouting")}</h2>
+          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("smartRouting")}</h2>
         </div>
         <p className={`text-sm ${textSecondary} mb-4`}>{t("smartRoutingDesc")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -149,7 +149,7 @@ export function RiskMonitor() {
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("riskHistory")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("riskHistory")}</h2>
             <p className={`text-xs mt-1 ${textSecondary}`}>{t("riskMonitorSubtitle")}</p>
           </div>
           <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -168,7 +168,7 @@ export function RiskMonitor() {
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
           <div className="flex items-center gap-2">
             <Eye className="w-5 h-5 text-slate-500" />
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("providerScoring")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providerScoring")}</h2>
           </div>
         </div>
         <div className="overflow-x-auto scrollbar-thin">

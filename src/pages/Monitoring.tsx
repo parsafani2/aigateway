@@ -18,7 +18,7 @@ import type { AnomalyEvent, Provider, RequestLog } from "@/types";
 export function Monitoring() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
   const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
 
   const [anomalies, setAnomalies] = useState<AnomalyEvent[]>([]);
@@ -112,7 +112,7 @@ export function Monitoring() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("monitoringTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("monitoringTitle")}</h1>
         <p className={`text-sm mt-1 ${textSecondary}`}>{t("monitoringSubtitle")}</p>
       </div>
 
@@ -151,7 +151,7 @@ export function Monitoring() {
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("realtimeHealth")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("realtimeHealth")}</h2>
             <p className={`text-xs mt-1 ${textSecondary}`}>{t("realtimeHealthDesc")}</p>
           </div>
           <Activity className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -183,7 +183,7 @@ export function Monitoring() {
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("responseTimeTracking")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("responseTimeTracking")}</h2>
             <p className={`text-xs mt-1 ${textSecondary}`}>{t("responseTimeTrackingDesc")}</p>
           </div>
           <Gauge className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -203,7 +203,7 @@ export function Monitoring() {
           <div className="flex items-center gap-2">
             <Zap className="w-5 h-5 text-cyan-500" />
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("anomalyDetectionTitle")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("anomalyDetectionTitle")}</h2>
               <p className={`text-xs mt-0.5 ${textSecondary}`}>{t("anomalyDetectionDesc")}</p>
             </div>
           </div>

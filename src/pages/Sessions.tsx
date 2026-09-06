@@ -20,8 +20,8 @@ import type { BrowserSession } from "@/types";
 export function Sessions() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
-  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-900"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`;
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
+  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-800"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`;
 
   const [sessions, setSessions] = useState<BrowserSession[]>([]);
   const [loading, setLoading] = useState(true);
@@ -168,7 +168,7 @@ export function Sessions() {
     <div className="space-y-6 animate-slide-up">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("sessionsTitle")}</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("sessionsTitle")}</h1>
           <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("sessionsSubtitle")}</p>
         </div>
         <div className="flex items-center gap-2">
@@ -294,7 +294,7 @@ export function Sessions() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setShowAdd(false)}>
           <div className={`w-full max-w-md ${isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200"} border rounded-2xl shadow-2xl animate-scale-in`} onClick={(e) => e.stopPropagation()}>
             <div className={`flex items-center justify-between p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-              <h2 className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{editingId ? t("editSession") : t("addSession")}</h2>
+              <h2 className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{editingId ? t("editSession") : t("addSession")}</h2>
               <button onClick={() => setShowAdd(false)} className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                 <X className="w-5 h-5 text-slate-400" />
               </button>

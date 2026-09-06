@@ -9,25 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Cost Analysis page** — track spending per request, view cost trends by day, break down costs by provider and model, configure budget alerts with thresholds, and export cost data as CSV.
-- **Enhanced Monitoring page** — real-time provider health status with health scores, response time tracking chart, and anomaly detection with filterable event log and resolve/unresolve actions.
-- **Getting Started guide** — interactive tutorials with progress tracking, prerequisites checklist, code examples in cURL/Python/JavaScript, and FAQ section.
-- **Anomaly detection system** — database table for tracking latency spikes, error spikes, cost spikes, detection signals, and usage pattern anomalies with severity levels.
-- **Cost budgets** — database table for configurable spending budgets (daily/weekly/monthly) with alert thresholds.
-- **Tutorial progress tracking** — database table for storing user completion state across educational tutorials.
-- New navigation items: Cost Analysis, Monitoring, Getting Started.
-- New translation keys (English and Persian) for all new features.
-- Command palette support for all new pages.
+- **Expanded Getting Started tutorials** — from 5 to 12 step-by-step tutorials covering every feature from zero to hero, fully bilingual (English and Persian).
+- **Full Persian translations for all educational content** — tutorial steps, FAQ items, prerequisites, and code examples are now fully translated.
+- **New tutorial topics**: Monitoring & Anomaly Detection, Risk Monitor & Provider Scoring, User Management & Access Control, Using the API Playground, Audit Logs & Activity Tracking, Cost Analysis & Export, Settings & Gateway Configuration.
+- **Expanded FAQ** — from 8 to 12 frequently asked questions in both languages.
+- **Copy response button** on the Playground page for quick clipboard access.
 
 ### Changed
 
-- Consolidated lucide-react imports in App.tsx into a single import statement.
-- Updated RequestLog type to include optional `cost` and `model_name` fields.
-- Updated Page type to include `costAnalysis`, `monitoring`, and `gettingStarted` routes.
+- **Improved light mode color scheme** — softer background tones (slate-100 instead of slate-50), warmer card backgrounds (white/80 with softer borders), and softer heading text colors (slate-800 instead of slate-900) for a more pleasant reading experience.
+- **Sidebar and header backgrounds** softened in light mode with translucent effects.
+- Updated GettingStarted page to use a structured bilingual content system instead of hardcoded English strings.
 
 ### Fixed
 
-- Removed duplicate `critical` key in English translations.
+- Fixed Playground useEffect missing dependency array — was running on every render instead of once on mount.
+- Fixed type error in Cost Analysis budget form period field.
+- Removed unused imports and variables across multiple pages (Dashboard, ApiDocs, AuditLogs, CostAnalysis, Sessions, Users, RiskMonitor, CommandPalette).
+- Removed unused `errors` variable in ai-gateway edge function.
 
 ## [1.0.0] - 2026-09-03
 

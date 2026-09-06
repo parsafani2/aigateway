@@ -7,7 +7,7 @@ import type { AuditLog } from "@/types";
 export function AuditLogs() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
 
   const [logs, setLogs] = useState<AuditLog[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,7 +62,7 @@ export function AuditLogs() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("auditLogsTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("auditLogsTitle")}</h1>
         <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("auditLogsSubtitle")}</p>
       </div>
 

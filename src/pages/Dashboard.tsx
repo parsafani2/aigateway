@@ -33,7 +33,7 @@ const COST_PER_1K: Record<string, number> = {
 export function Dashboard() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
   const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
 
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -179,7 +179,7 @@ export function Dashboard() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("dashboardTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("dashboardTitle")}</h1>
         <p className={`text-sm mt-1 ${textSecondary}`}>{t("dashboardSubtitle")}</p>
       </div>
 
@@ -210,7 +210,7 @@ export function Dashboard() {
         <div className={`lg:col-span-2 ${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("requestActivity")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("requestActivity")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("last7Days")}</p>
             </div>
             <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -222,7 +222,7 @@ export function Dashboard() {
         <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("providerUsage")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providerUsage")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("byRequestCount")}</p>
             </div>
             <Server className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -255,7 +255,7 @@ export function Dashboard() {
         <div className={`lg:col-span-2 ${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("tokenUsageTrend")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("tokenUsageTrend")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("last7Days")}</p>
             </div>
             <Cpu className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -266,7 +266,7 @@ export function Dashboard() {
         <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("providerHealth")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providerHealth")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{activeProviders} {t("active")}</p>
             </div>
             <Heart className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -298,7 +298,7 @@ export function Dashboard() {
         <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("latencyDistribution")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("latencyDistribution")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("latencyDistributionDesc")}</p>
             </div>
             <Gauge className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -316,7 +316,7 @@ export function Dashboard() {
         <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("loadBalancing")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("loadBalancing")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("loadBalancingDesc")}</p>
             </div>
             <BarChart3 className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -332,7 +332,7 @@ export function Dashboard() {
       {/* Recent requests */}
       <div className={`${cardBg} rounded-xl overflow-hidden backdrop-blur-xl border`}>
         <div className={`p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("recentRequests")}</h2>
+          <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("recentRequests")}</h2>
           <p className={`text-xs mt-1 ${textSecondary}`}>{t("latestRequests")}</p>
         </div>
         <div className={`divide-y ${isDark ? "divide-slate-800" : "divide-slate-200"}`}>

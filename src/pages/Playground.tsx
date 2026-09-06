@@ -12,8 +12,8 @@ interface PlaygroundMessage {
 export function Playground() {
   const { t, theme } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
-  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-900"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`;
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
+  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-800"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`;
 
   const [providers, setProviders] = useState<Provider[]>([]);
   const [models, setModels] = useState<string[]>([]);
@@ -106,7 +106,7 @@ export function Playground() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("playgroundTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("playgroundTitle")}</h1>
         <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("playgroundSubtitle")}</p>
       </div>
 
@@ -177,7 +177,7 @@ export function Playground() {
 
         {/* Response panel */}
         <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
-          <h2 className={`font-semibold text-lg mb-4 ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("response")}</h2>
+          <h2 className={`font-semibold text-lg mb-4 ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("response")}</h2>
 
           {error && (
             <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-500 text-sm animate-scale-in">
@@ -240,7 +240,7 @@ export function Playground() {
 
       {/* Active providers info */}
       <div className={`${cardBg} rounded-xl p-6 border backdrop-blur-xl`}>
-        <h2 className={`font-semibold text-lg mb-3 ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("providers")}</h2>
+        <h2 className={`font-semibold text-lg mb-3 ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providers")}</h2>
         <div className="flex gap-2 flex-wrap">
           {providers.map((p) => (
             <div key={p.id} className={`flex items-center gap-2 px-3 py-1.5 rounded-lg ${isDark ? "bg-slate-800/50" : "bg-slate-100"}`}>

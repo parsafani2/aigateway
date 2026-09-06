@@ -7,7 +7,7 @@ import type { RequestLog } from "@/types";
 export function Logs() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
 
   const [logs, setLogs] = useState<RequestLog[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,14 +43,14 @@ export function Logs() {
   return (
     <div className="space-y-6 animate-slide-up">
       <div>
-        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("logsTitle")}</h1>
+        <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("logsTitle")}</h1>
         <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("logsSubtitle")}</p>
       </div>
 
       <div className="flex items-center gap-3 flex-wrap">
         <div className="relative flex-1 min-w-[200px]">
           <Search className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 ${lang === "fa" ? "right-3" : "left-3"}`} />
-          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t("searchPlaceholder")} className={`w-full ${lang === "fa" ? "pr-10 pl-3.5" : "pl-10 pr-3.5"} py-2.5 rounded-lg ${cardBg} border text-sm ${isDark ? "text-slate-100" : "text-slate-900"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`} />
+          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t("searchPlaceholder")} className={`w-full ${lang === "fa" ? "pr-10 pl-3.5" : "pl-10 pr-3.5"} py-2.5 rounded-lg ${cardBg} border text-sm ${isDark ? "text-slate-100" : "text-slate-800"} placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors`} />
         </div>
         <div className={`flex items-center gap-1 p-1 rounded-lg ${cardBg} border`}>
           {(["all", "success", "error"] as const).map((s) => (

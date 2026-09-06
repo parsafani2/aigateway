@@ -75,11 +75,11 @@ function AppContent() {
   }, []);
 
   const isDark = theme === "dark";
-  const sidebarBg = isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200";
-  const mobileHeaderBg = isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200";
+  const sidebarBg = isDark ? "bg-slate-900 border-slate-800" : "bg-white/90 border-slate-200/80";
+  const mobileHeaderBg = isDark ? "bg-slate-900 border-slate-800" : "bg-white/90 border-slate-200/80";
   const activeNav = "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20";
   const inactiveNav = "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 border-transparent";
-  const textPrimary = isDark ? "text-slate-100" : "text-slate-900";
+  const textPrimary = isDark ? "text-slate-100" : "text-slate-800";
 
   return (
     <div className="min-h-screen transition-colors duration-300">

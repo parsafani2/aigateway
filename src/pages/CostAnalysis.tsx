@@ -32,9 +32,9 @@ const COST_PER_1K: Record<string, number> = {
 export function CostAnalysis() {
   const { t, theme } = useApp();
   const isDark = theme === "dark";
-  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
+  const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
   const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
-  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-900"} focus:outline-none focus:border-cyan-500 transition-colors`;
+  const inputClass = `w-full px-3.5 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 border ${isDark ? "border-slate-700" : "border-slate-300"} text-sm ${isDark ? "text-slate-100" : "text-slate-800"} focus:outline-none focus:border-cyan-500 transition-colors`;
 
   const [logs, setLogs] = useState<RequestLog[]>([]);
   const [stats, setStats] = useState<UsageStat[]>([]);
@@ -179,7 +179,7 @@ export function CostAnalysis() {
     <div className="space-y-6 animate-slide-up">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("costAnalysisTitle")}</h1>
+          <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("costAnalysisTitle")}</h1>
           <p className={`text-sm mt-1 ${textSecondary}`}>{t("costAnalysisSubtitle")}</p>
         </div>
         <button onClick={exportCSV} disabled={exporting || loading} className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-medium transition-colors disabled:opacity-50">
@@ -213,7 +213,7 @@ export function CostAnalysis() {
         <div className={`lg:col-span-2 ${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("costTrend")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("costTrend")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("last7Days")}</p>
             </div>
             <DollarSign className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -228,7 +228,7 @@ export function CostAnalysis() {
         <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("costByProvider")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("costByProvider")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("costBreakdownDesc")}</p>
             </div>
             <BarChart3 className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -260,7 +260,7 @@ export function CostAnalysis() {
       <div className={`${cardBg} rounded-xl p-6 backdrop-blur-xl border`}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("costByModel")}</h2>
+            <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("costByModel")}</h2>
             <p className={`text-xs mt-1 ${textSecondary}`}>{t("costBreakdownDesc")}</p>
           </div>
           <BarChart3 className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
@@ -280,7 +280,7 @@ export function CostAnalysis() {
           <div className="flex items-center gap-2">
             <Wallet className="w-5 h-5 text-amber-500" />
             <div>
-              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("budgetAlerts")}</h2>
+              <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("budgetAlerts")}</h2>
               <p className={`text-xs mt-0.5 ${textSecondary}`}>{t("budgetAlertsDesc")}</p>
             </div>
           </div>
@@ -348,7 +348,7 @@ export function CostAnalysis() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setShowAddBudget(false)}>
           <div className={`w-full max-w-md ${isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200"} border rounded-2xl shadow-2xl animate-scale-in`} onClick={(e) => e.stopPropagation()}>
             <div className={`flex items-center justify-between p-6 border-b ${isDark ? "border-slate-800" : "border-slate-200"}`}>
-              <h2 className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{editingBudgetId ? t("editBudget") : t("addBudget")}</h2>
+              <h2 className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{editingBudgetId ? t("editBudget") : t("addBudget")}</h2>
             </div>
             <div className="p-6 space-y-4">
               <div>
