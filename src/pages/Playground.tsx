@@ -107,7 +107,7 @@ export function Playground() {
     <div className="space-y-6 animate-slide-up">
       <div>
         <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("playgroundTitle")}</h1>
-        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("playgroundSubtitle")}</p>
+        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("playgroundSubtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -142,7 +142,7 @@ export function Playground() {
                     className={`flex-1 ${inputClass} resize-none`}
                   />
                   {messages.length > 1 && (
-                    <button onClick={() => removeMessage(idx)} className="p-2 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors flex-shrink-0">
+                    <button onClick={() => removeMessage(idx)} className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors flex-shrink-0">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   )}
@@ -189,7 +189,7 @@ export function Playground() {
           {!error && !response && (
             <div className="text-center py-16">
               <Server className={`w-10 h-10 mx-auto mb-3 ${isDark ? "text-slate-700" : "text-slate-300"}`} />
-              <p className={`text-sm ${isDark ? "text-slate-500" : "text-slate-400"}`}>{t("noResponse")}</p>
+              <p className={`text-sm ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("noResponse")}</p>
             </div>
           )}
 
@@ -206,7 +206,7 @@ export function Playground() {
                   onClick={() => { navigator.clipboard.writeText(response); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
                   className="absolute top-2 end-2 p-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
                 >
-                  {copied ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
+                  {copied ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                 </button>
               </div>
 

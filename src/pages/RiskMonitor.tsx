@@ -20,7 +20,7 @@ export function RiskMonitor() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
   const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
-  const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
+  const textSecondary = isDark ? "text-slate-500" : "text-slate-600";
 
   const [scores, setScores] = useState<RiskScore[]>([]);
   const [loading, setLoading] = useState(true);
@@ -101,7 +101,7 @@ export function RiskMonitor() {
             <div key={card.label} className={`bg-gradient-to-br ${colorMap[card.color]} border rounded-xl p-5 backdrop-blur-xl`}>
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-xs text-slate-400 uppercase tracking-wider font-medium">{card.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-medium">{card.label}</p>
                   <p className="text-2xl font-bold mt-2 text-white">{card.value}</p>
                 </div>
                 <div className={`p-2.5 rounded-lg bg-gradient-to-br ${colorMap[card.color]}`}>
@@ -152,7 +152,7 @@ export function RiskMonitor() {
             <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("riskHistory")}</h2>
             <p className={`text-xs mt-1 ${textSecondary}`}>{t("riskMonitorSubtitle")}</p>
           </div>
-          <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+          <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
         </div>
         {loading ? (
           <div className="h-40 bg-slate-800/40 rounded-lg animate-pulse" />

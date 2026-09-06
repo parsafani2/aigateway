@@ -44,7 +44,7 @@ export function Logs() {
     <div className="space-y-6 animate-slide-up">
       <div>
         <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("logsTitle")}</h1>
-        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("logsSubtitle")}</p>
+        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("logsSubtitle")}</p>
       </div>
 
       <div className="flex items-center gap-3 flex-wrap">

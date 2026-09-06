@@ -169,7 +169,7 @@ export function Sessions() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("sessionsTitle")}</h1>
-          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("sessionsSubtitle")}</p>
+          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("sessionsSubtitle")}</p>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={rotateAll} className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20 text-sm font-medium transition-colors border border-amber-500/20">
@@ -200,7 +200,7 @@ export function Sessions() {
             <div key={card.label} className={`bg-gradient-to-br ${colorMap[card.color]} border rounded-xl p-5 backdrop-blur-xl`}>
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-xs text-slate-400 uppercase tracking-wider font-medium">{card.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-medium">{card.label}</p>
                   <p className="text-2xl font-bold mt-2 text-white">{card.value}</p>
                 </div>
                 <div className={`p-2.5 rounded-lg bg-gradient-to-br ${colorMap[card.color]}`}>
@@ -242,7 +242,7 @@ export function Sessions() {
                           <div className="flex items-center gap-1">
                             <code className="text-xs text-slate-500 font-mono">{showToken === s.id ? s.token : `${s.token.slice(0, 8)}...`}</code>
                             <button onClick={() => setShowToken(showToken === s.id ? null : s.id)} className="p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                              {showToken === s.id ? <EyeOff className="w-3 h-3 text-slate-400" /> : <Eye className="w-3 h-3 text-slate-400" />}
+                              {showToken === s.id ? <EyeOff className="w-3 h-3 text-slate-500 dark:text-slate-400" /> : <Eye className="w-3 h-3 text-slate-500 dark:text-slate-400" />}
                             </button>
                           </div>
                         </div>

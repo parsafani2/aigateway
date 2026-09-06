@@ -34,7 +34,7 @@ export function Dashboard() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
   const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
-  const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
+  const textSecondary = isDark ? "text-slate-500" : "text-slate-600";
 
   const [providers, setProviders] = useState<Provider[]>([]);
   const [recentLogs, setRecentLogs] = useState<RequestLog[]>([]);
@@ -191,7 +191,7 @@ export function Dashboard() {
             <div key={card.label} className={`bg-gradient-to-br ${colorMap[card.color]} border rounded-xl p-5 backdrop-blur-xl`}>
               <div className="flex items-start justify-between">
                 <div className="min-w-0">
-                  <p className="text-xs text-slate-400 uppercase tracking-wider font-medium truncate">{card.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-medium truncate">{card.label}</p>
                   <p className="text-xl lg:text-2xl font-bold mt-2 text-white truncate">{card.value}</p>
                   {card.sub && <p className="text-xs text-slate-500 mt-1">{card.sub}</p>}
                 </div>
@@ -213,7 +213,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("requestActivity")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("last7Days")}</p>
             </div>
-            <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <TrendingUp className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           <BarChart data={chartData} color={isDark ? "#06b6d4" : "#0891b2"} height={180} />
         </div>
@@ -225,7 +225,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providerUsage")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("byRequestCount")}</p>
             </div>
-            <Server className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <Server className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           {loading ? (
             <div className="h-40 bg-slate-800/40 rounded-lg animate-pulse" />
@@ -258,7 +258,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("tokenUsageTrend")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("last7Days")}</p>
             </div>
-            <Cpu className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <Cpu className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           <LineChart data={tokenChartData} color={isDark ? "#8b5cf6" : "#7c3aed"} height={180} />
         </div>
@@ -269,7 +269,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providerHealth")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{activeProviders} {t("active")}</p>
             </div>
-            <Heart className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <Heart className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           <div className="space-y-2">
             {providerHealth.slice(0, 6).map((p) => (
@@ -301,7 +301,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("latencyDistribution")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("latencyDistributionDesc")}</p>
             </div>
-            <Gauge className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <Gauge className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           <div className="grid grid-cols-3 gap-4">
             {latencyData.map((d) => (
@@ -319,7 +319,7 @@ export function Dashboard() {
               <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("loadBalancing")}</h2>
               <p className={`text-xs mt-1 ${textSecondary}`}>{t("loadBalancingDesc")}</p>
             </div>
-            <BarChart3 className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-400"}`} />
+            <BarChart3 className={`w-5 h-5 ${isDark ? "text-slate-600" : "text-slate-500"}`} />
           </div>
           {loadBalancingData.length === 0 || loadBalancingData.every((d) => d.value === 0) ? (
             <p className={`text-sm text-center py-12 ${textSecondary}`}>{t("noUsageData")}</p>
@@ -360,7 +360,7 @@ export function Dashboard() {
                   <p className={`text-xs ${textSecondary}`}>
                     {log.response_time != null ? `${log.response_time.toFixed(2)}s` : "—"}
                   </p>
-                  <p className={`text-xs ${isDark ? "text-slate-600" : "text-slate-400"}`}>
+                  <p className={`text-xs ${isDark ? "text-slate-600" : "text-slate-500"}`}>
                     {new Date(log.created_at).toLocaleTimeString(lang === "fa" ? "fa" : "en", { hour: "2-digit", minute: "2-digit" })}
                   </p>
                 </div>

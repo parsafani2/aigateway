@@ -118,7 +118,7 @@ export function SettingsPage() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("settingsTitle")}</h1>
-          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("settingsSubtitle")}</p>
+          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("settingsSubtitle")}</p>
         </div>
         <button onClick={saveAll} disabled={saving || loading} className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-medium transition-colors disabled:opacity-50">
           {saved ? <Check className="w-4 h-4" /> : <Save className="w-4 h-4" />}
@@ -179,7 +179,7 @@ export function SettingsPage() {
                   </div>
                   <div className="w-full max-w-xs">
                     <input type={meta.type ?? "text"} value={values[s.key] ?? ""} onChange={(e) => setValues({ ...values, [s.key]: e.target.value })} className={inputClass} />
-                    <p className="text-xs text-slate-400 mt-1 font-mono">{s.key}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono">{s.key}</p>
                   </div>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export function SettingsPage() {
               <Bell className="w-5 h-5 text-amber-500" />
               <div>
                 <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("alertConfig")}</h2>
-                <p className={`text-xs mt-0.5 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("alertConfigDesc")}</p>
+                <p className={`text-xs mt-0.5 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("alertConfigDesc")}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

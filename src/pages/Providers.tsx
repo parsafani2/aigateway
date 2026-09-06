@@ -135,7 +135,7 @@ export function Providers() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("providersTitle")}</h1>
-          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("providersSubtitle")}</p>
+          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("providersSubtitle")}</p>
         </div>
         <button
           onClick={() => { resetForm(); setShowAdd(true); }}
@@ -203,7 +203,7 @@ export function Providers() {
         ) : providers.length === 0 ? (
           <div className={`text-center py-16 ${cardBg} rounded-xl border`}>
             <Server className="w-10 h-10 text-slate-400 mx-auto mb-3" />
-            <p className={isDark ? "text-slate-500" : "text-slate-500"}>{t("noProviders")}</p>
+            <p className={isDark ? "text-slate-500" : "text-slate-600"}>{t("noProviders")}</p>
           </div>
         ) : (
           providers.map((p, idx) => (
@@ -290,7 +290,7 @@ export function Providers() {
                 <input type="text" value={form.base_url} onChange={(e) => setForm({ ...form, base_url: e.target.value })} placeholder="https://api.openai.com/v1" className={inputClass} />
               </div>
               <div>
-                <label className={`block text-sm font-medium mb-1.5 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{t("apiKeyLabel")} {editingId && <span className="text-slate-400">{t("leaveBlankKeep")}</span>}</label>
+                <label className={`block text-sm font-medium mb-1.5 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{t("apiKeyLabel")} {editingId && <span className="text-slate-500 dark:text-slate-400">{t("leaveBlankKeep")}</span>}</label>
                 <input type="password" value={form.api_key} onChange={(e) => setForm({ ...form, api_key: e.target.value })} placeholder="sk-..." className={inputClass} />
               </div>
               <div>

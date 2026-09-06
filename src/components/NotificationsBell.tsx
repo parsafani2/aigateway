@@ -89,7 +89,7 @@ export function NotificationsBell() {
           </div>
           <div className="max-h-80 overflow-y-auto scrollbar-thin">
             {notifications.length === 0 ? (
-              <p className={`text-sm text-center py-8 ${isDark ? "text-slate-500" : "text-slate-400"}`}>{t("noNotifications")}</p>
+              <p className={`text-sm text-center py-8 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("noNotifications")}</p>
             ) : (
               notifications.map((n) => {
                 const Icon = typeIcons[n.type] ?? Info;
@@ -99,7 +99,7 @@ export function NotificationsBell() {
                     <div className="flex-1 min-w-0">
                       <p className={`text-sm font-medium ${isDark ? "text-slate-200" : "text-slate-800"}`}>{n.title}</p>
                       {n.message && <p className="text-xs text-slate-500 mt-0.5">{n.message}</p>}
-                      <p className="text-xs text-slate-400 mt-1">{new Date(n.created_at).toLocaleString(locale, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{new Date(n.created_at).toLocaleString(locale, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</p>
                     </div>
                     {!n.read && <div className="w-2 h-2 rounded-full bg-cyan-500 flex-shrink-0 mt-1.5" />}
                   </div>

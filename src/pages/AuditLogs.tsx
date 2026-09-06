@@ -63,7 +63,7 @@ export function AuditLogs() {
     <div className="space-y-6 animate-slide-up">
       <div>
         <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("auditLogsTitle")}</h1>
-        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("auditLogsSubtitle")}</p>
+        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("auditLogsSubtitle")}</p>
       </div>
 
       {entities.length > 0 && (
@@ -83,7 +83,7 @@ export function AuditLogs() {
         ) : filtered.length === 0 ? (
           <div className="text-center py-16">
             <ScrollText className={`w-10 h-10 mx-auto mb-3 ${isDark ? "text-slate-700" : "text-slate-300"}`} />
-            <p className={`text-sm ${isDark ? "text-slate-500" : "text-slate-400"}`}>{t("noAuditLogs")}</p>
+            <p className={`text-sm ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("noAuditLogs")}</p>
           </div>
         ) : (
           <div className={`divide-y ${isDark ? "divide-slate-800" : "divide-slate-200"}`}>
@@ -100,7 +100,7 @@ export function AuditLogs() {
                       <span className={`px-1.5 py-0.5 rounded text-xs font-mono ${isDark ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500"}`}>{log.entity}</span>
                     </div>
                     {log.details && <p className="text-xs text-slate-500 mt-1">{log.details}</p>}
-                    <div className="flex items-center gap-3 mt-1.5 text-xs text-slate-400">
+                    <div className="flex items-center gap-3 mt-1.5 text-xs text-slate-500 dark:text-slate-400">
                       <span>{t("performedBy")}: {log.performed_by}</span>
                       <span>·</span>
                       <span>{new Date(log.created_at).toLocaleString(locale, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</span>

@@ -99,7 +99,7 @@ export function CommandPalette({ open, onClose, onNavigate }: CommandPaletteProp
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3 px-4 border-b border-slate-200 dark:border-slate-800">
-          <Search className="w-4 h-4 text-slate-400 flex-shrink-0" />
+          <Search className="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -108,7 +108,7 @@ export function CommandPalette({ open, onClose, onNavigate }: CommandPaletteProp
             placeholder={t("searchCommands")}
             className="flex-1 bg-transparent py-4 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none"
           />
-          <kbd className="px-1.5 py-0.5 text-xs text-slate-400 bg-slate-100 dark:bg-slate-800 rounded font-mono">ESC</kbd>
+          <kbd className="px-1.5 py-0.5 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded font-mono">ESC</kbd>
         </div>
         <div className="max-h-80 overflow-y-auto scrollbar-thin p-2">
           {filtered.length === 0 ? (
@@ -117,7 +117,7 @@ export function CommandPalette({ open, onClose, onNavigate }: CommandPaletteProp
             <>
               {navItems.length > 0 && (
                 <div className="mb-2">
-                  <p className="text-xs text-slate-400 font-medium px-2 py-1">{t("goTo")}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium px-2 py-1">{t("goTo")}</p>
                   {navItems.map((cmd) => {
                     const idx = filtered.indexOf(cmd);
                     const Icon = cmd.icon;
@@ -139,7 +139,7 @@ export function CommandPalette({ open, onClose, onNavigate }: CommandPaletteProp
               )}
               {actionItems.length > 0 && (
                 <div>
-                  <p className="text-xs text-slate-400 font-medium px-2 py-1">{t("actions")}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium px-2 py-1">{t("actions")}</p>
                   {actionItems.map((cmd) => {
                     const idx = filtered.indexOf(cmd);
                     const Icon = cmd.icon;

@@ -413,7 +413,7 @@ export function GettingStarted() {
   const { t, theme, lang } = useApp();
   const isDark = theme === "dark";
   const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/80 border-slate-200/80";
-  const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
+  const textSecondary = isDark ? "text-slate-500" : "text-slate-600";
   const [copied, setCopied] = useState<string | null>(null);
   const [progress, setProgress] = useState<Map<string, boolean>>(new Map());
   const [openTutorial, setOpenTutorial] = useState<string | null>("tutorial1");
@@ -578,7 +578,7 @@ export function GettingStarted() {
         <div className="relative">
           <pre className={`p-6 text-sm font-mono overflow-x-auto scrollbar-thin leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}><code>{content.codeExamples[activeTab]}</code></pre>
           <button onClick={() => copy(content.codeExamples[activeTab], activeTab)} className="absolute top-4 end-4 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-            {copied === activeTab ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-400" />}
+            {copied === activeTab ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
           </button>
         </div>
       </div>

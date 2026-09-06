@@ -144,7 +144,7 @@ export function Users() {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("usersTitle")}</h1>
-          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("usersSubtitle")}</p>
+          <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("usersSubtitle")}</p>
         </div>
         <button onClick={() => { resetForm(); setShowAdd(true); }} className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-medium transition-colors">
           <Plus className="w-4 h-4" />{t("addUser")}
@@ -197,7 +197,7 @@ export function Users() {
                       <div className="flex items-center gap-2">
                         <code className="text-xs text-slate-500 font-mono truncate max-w-[120px]">{u.api_key.slice(0, 16)}...</code>
                         <button onClick={() => copyKey(u.api_key, u.id)} className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                          {copiedId === u.id ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
+                          {copiedId === u.id ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                         </button>
                         <button onClick={() => regenerateKey(u)} className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title={t("regenerateKey")}>
                           <RefreshCw className="w-3.5 h-3.5 text-slate-400" />

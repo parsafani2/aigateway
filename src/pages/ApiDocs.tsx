@@ -122,7 +122,7 @@ echo $response["choices"][0]["message"]["content"];`,
     <div className="space-y-6 animate-slide-up">
       <div>
         <h1 className={`text-2xl font-bold ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("apiDocsTitle")}</h1>
-        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("apiDocsSubtitle")}</p>
+        <p className={`text-sm mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("apiDocsSubtitle")}</p>
       </div>
 
       <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-xl p-6">
@@ -169,7 +169,7 @@ echo $response["choices"][0]["message"]["content"];`,
         <div className="relative">
           <pre className={`p-6 text-sm font-mono overflow-x-auto scrollbar-thin leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}><code>{examples[activeTab]}</code></pre>
           <button onClick={() => copy(examples[activeTab], activeTab)} className="absolute top-4 end-4 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-            {copied === activeTab ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-400" />}
+            {copied === activeTab ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
           </button>
         </div>
       </div>
@@ -215,7 +215,7 @@ echo $response["choices"][0]["message"]["content"];`,
               <div className="w-7 h-7 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs font-bold flex-shrink-0">{item.step}</div>
               <div>
                 <h4 className={`text-sm font-medium ${isDark ? "text-slate-200" : "text-slate-800"}`}>{t(item.titleKey)}</h4>
-                <p className={`text-sm mt-0.5 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t(item.descKey)}</p>
+                <p className={`text-sm mt-0.5 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t(item.descKey)}</p>
               </div>
             </div>
           ))}
@@ -229,7 +229,7 @@ echo $response["choices"][0]["message"]["content"];`,
             <HelpCircle className="w-5 h-5 text-slate-500" />
             <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("faq")}</h2>
           </div>
-          <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("faqDesc")}</p>
+          <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("faqDesc")}</p>
         </div>
         <div className={`divide-y ${isDark ? "divide-slate-800" : "divide-slate-200"}`}>
           {faqItems.map((item, i) => (
@@ -258,7 +258,7 @@ echo $response["choices"][0]["message"]["content"];`,
             <AlertTriangle className="w-5 h-5 text-amber-500" />
             <h2 className={`font-semibold text-lg ${isDark ? "text-slate-100" : "text-slate-800"}`}>{t("troubleshooting")}</h2>
           </div>
-          <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-500"}`}>{t("troubleshootingDesc")}</p>
+          <p className={`text-xs mt-1 ${isDark ? "text-slate-500" : "text-slate-600"}`}>{t("troubleshootingDesc")}</p>
         </div>
         <div className={`divide-y ${isDark ? "divide-slate-800" : "divide-slate-200"}`}>
           {troubleshootingItems.map((item, i) => (
