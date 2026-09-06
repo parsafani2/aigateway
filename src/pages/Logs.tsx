@@ -30,7 +30,7 @@ export function Logs() {
     setLoading(false);
   }
 
-  useEffect(() => { fetchLogs(true); /* eslint-disable-next-line */ }, [statusFilter]);
+  useEffect(() => { fetchLogs(true); }, [statusFilter]);
 
   const filtered = logs.filter((log) => {
     if (!search) return true;

@@ -188,7 +188,6 @@ async function calculateRiskScore(providerName: string): Promise<RiskScore | nul
 
   const total = logs.length;
   const successes = logs.filter((l: { status: string }) => l.status === "success").length;
-  const errors = total - successes;
   const successRate = (successes / total) * 100;
 
   const responseTimes = logs

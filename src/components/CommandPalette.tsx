@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Search, ArrowRight, Moon, Sun, Languages } from "lucide-react";
+import { Search, ArrowRight, Sun, Languages } from "lucide-react";
 import { useApp } from "@/contexts/AppContext";
 import type { Page } from "@/types";
 import type { TranslationKey } from "@/i18n";

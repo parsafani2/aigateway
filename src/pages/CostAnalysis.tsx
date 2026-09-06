@@ -30,7 +30,7 @@ const COST_PER_1K: Record<string, number> = {
 };
 
 export function CostAnalysis() {
-  const { t, theme, lang } = useApp();
+  const { t, theme } = useApp();
   const isDark = theme === "dark";
   const cardBg = isDark ? "bg-slate-900/60 border-slate-800" : "bg-white/70 border-slate-200";
   const textSecondary = isDark ? "text-slate-500" : "text-slate-500";
@@ -44,7 +44,7 @@ export function CostAnalysis() {
   const [editingBudgetId, setEditingBudgetId] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
   const [exported, setExported] = useState(false);
-  const [budgetForm, setBudgetForm] = useState({ name: "", period: "monthly" as const, limit_amount: "100", alert_threshold: "80" });
+  const [budgetForm, setBudgetForm] = useState<{ name: string; period: "daily" | "weekly" | "monthly"; limit_amount: string; alert_threshold: string }>({ name: "", period: "monthly", limit_amount: "100", alert_threshold: "80" });
 
   useEffect(() => {
     async function fetchData() {
