@@ -87,6 +87,7 @@ export interface BrowserSession {
   expires_at: string | null;
   user_agent: string | null;
   ip_address: string | null;
+  account_name: string | null;
   metadata: Record<string, unknown>;
   created_at: string;
   updated_at: string;
